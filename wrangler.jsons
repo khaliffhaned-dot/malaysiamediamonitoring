@@ -1,0 +1,24 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "malaysiamediamonitoring",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-11-16",
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  "observability": {
+    "enabled": true
+  },
+  "d1_databases": [
+    {
+      "binding": "MY_MEDIAMONITORING",
+      "database_id": "cbb48ffb-7e39-4363-9ad2-3f81c65f6116",
+      "remote": true
+    }
+  ],
+  "ai": {
+    "binding": "mysmedmon"
+  }
+}
