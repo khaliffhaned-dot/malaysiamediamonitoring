@@ -1,5 +1,4 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "malaysiamediamonitoring",
   "main": ".open-next/worker.js",
   "compatibility_date": "2026-11-16",
@@ -8,9 +7,6 @@
     "directory": ".open-next/assets",
     "binding": "ASSETS"
   },
-  "observability": {
-    "enabled": true
-  },
   "d1_databases": [
     {
       "binding": "MY_MEDIAMONITORING",
@@ -18,7 +14,5 @@
       "remote": true
     }
   ],
-  "ai": {
-    "binding": "mysmedmon"
-  }
+  "ai": { "binding": "mysmedmon" }
 }
