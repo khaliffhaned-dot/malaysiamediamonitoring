@@ -1,8 +1,12 @@
 {
+  "$schema": "node_modules/wrangler/config-schema.json",
   "name": "malaysiamediamonitoring",
   "main": ".open-next/worker.js",
-  "compatibility_date": "2026-11-16",
-  "compatibility_flags": ["nodejs_compat"],
+  "compatibility_date": "2026-11-22",
+  "compatibility_flags": [
+    "nodejs_compat",
+    "global_fetch_strictly_public"
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
@@ -13,48 +17,25 @@
       "database_id": "cbb48ffb-7e39-4363-9ad2-3f81c65f6116",
       "remote": true
     }
-{
-  // ...
+  ],
   "ai": {
     "binding": "mysmedmon"
   },
-  // ...
-}
-{
-	"$schema": "node_modules/wrangler/config-schema.json",
-	"main": ".open-next/worker.js",
-	"name": "nextn",
-	"compatibility_date": "2026-11-22",
-	"compatibility_flags": [
-		"nodejs_compat",
-		"global_fetch_strictly_public"
-	],
-	"assets": {
-		"directory": ".open-next/assets",
-		"binding": "ASSETS"
-	},
-	"services": [
-		{
-			// Self-reference service binding, the service name must match the worker name
-			// see https://opennext.js.org/cloudflare/caching
-			"binding": "WORKER_SELF_REFERENCE",
-			"service": "nextn"
-		}
-	],
-	"r2_buckets": [
-		// Use R2 incremental cache
-		// See https://opennext.js.org/cloudflare/caching
-		{
-			"binding": "NEXT_INC_CACHE_R2_BUCKET",
-			// Create the bucket before deploying
-			// You can change the bucket name if you want
-			// See https://developers.cloudflare.com/workers/wrangler/commands/#r2-bucket-create
-			"bucket_name": "nextn-opennext-cache"
-		}
-	],
-	"images": {
-		// Enable image optimization
-		// see https://opennext.js.org/cloudflare/howtos/image
-		"binding": "IMAGES"
-	}
+  "services": [
+    {
+      // Self-reference service binding; service name must match the worker name
+      "binding": "WORKER_SELF_REFERENCE",
+      "service": "malaysiamediamonitoring"
+    }
+  ],
+  "r2_buckets": [
+    {
+      // R2 incremental cache (ensure this bucket exists in Cloudflare R2 before deploying)
+      "binding": "NEXT_INC_CACHE_R2_BUCKET",
+      "bucket_name": "nextn-opennext-cache"
+    }
+  ],
+  "images": {
+    "binding": "IMAGES"
+  }
 }
