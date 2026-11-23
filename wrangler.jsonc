@@ -10,19 +10,16 @@
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
-  {
-  // ...
+  },
   "d1_databases": [
     {
-      "binding": "MEDIA-MONITORING",
+      "binding": "MEDIA_MONITORING",
       "database_id": "cbb48ffb-7e39-4363-9ad2-3f81c65f6116"
     }
   ],
   "ai": {
     "binding": "mysmedmon"
   },
-  // ...
-}
   "services": [
     {
       // Self-reference service binding; service name must match the worker name
