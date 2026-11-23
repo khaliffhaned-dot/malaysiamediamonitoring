@@ -13,8 +13,12 @@
       "database_id": "cbb48ffb-7e39-4363-9ad2-3f81c65f6116",
       "remote": true
     }
-  ],
-  "ai": { "binding": "mysmedmon" }
+{
+  // ...
+  "ai": {
+    "binding": "mysmedmon"
+  },
+  // ...
 }
 {
 	"$schema": "node_modules/wrangler/config-schema.json",
@@ -53,11 +57,4 @@
 		// see https://opennext.js.org/cloudflare/howtos/image
 		"binding": "IMAGES"
 	}
-}
-{
-  // ...
-  "ai": {
-    "binding": "mysmedmon"
-  },
-  // ...
 }
