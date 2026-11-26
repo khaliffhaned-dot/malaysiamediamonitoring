@@ -1,0 +1,27 @@
+name = "nadi"
+main = "src/index.ts"
+compatibility_date = "2026-11-01"
+compatibility_flags = ["nodejs_compat"]
+
+[[d1_databases]]
+binding = "DB"
+database_name = "nadi"
+database_id = "TODO_REPLACE_WITH_REAL_ID"
+
+# Optional: KV for rate limits / session cache
+# [[kv_namespaces]]
+# binding = "KV"
+# id = "..."
+
+# Optional: Queues for ingest
+# [[queues.producers]]
+# binding = "INGEST_QUEUE"
+# queue = "nadi-ingest"
+
+# Cron for scheduled reports (example)
+# [triggers]
+# crons = ["0 9 * * 1"]  # Monday 09:00 UTC
+
+[vars]
+AVE_ENABLED = "false"
+EVALUATION_CODENAME = "berry-bison-yonder-cabin"
